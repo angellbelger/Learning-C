@@ -3,10 +3,11 @@
 
 int main()
 {
+    int num1, num2;
+    printf("Digite um numero: \n");
+    scanf("%i", &num1);
+
+    printf("%i", num1);
     return 0;
-    
-    int day;
-    printf("Day: ");
-    scanf("%i", &day );
 
 }
