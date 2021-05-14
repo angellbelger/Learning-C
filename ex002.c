@@ -4,12 +4,12 @@
 int main()
 {
     int day, month, year;
-    printf("Hello, world.");
-    printf("Day: \n");
+    printf("Hello, world.\n");
+    printf("Day: ");
     scanf("%i", &day);
-    printf("Month: \n");
+    printf("Month: ");
     scanf("%i", &month);
-    printf("Year: \n");
+    printf("Year: ");
     scanf("%i", &year);
     printf("Your birth date is: %i/%i/%i", day, month, year);
 }
