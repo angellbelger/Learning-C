@@ -8,7 +8,7 @@ int main()
     printf("Day: \n");
     scanf("%i", &day);
     printf("Month: \n");
-    scanf("i", &month);
+    scanf("%i", &month);
     printf("Year: \n");
     scanf("%i", &year);
     printf("Your birth date is: %i/%i/%i", day, month, year);
