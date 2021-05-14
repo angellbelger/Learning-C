@@ -1,9 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
-    int x = 10;
-    printf("Hello, world.\n");
-    printf("valor de x = %i", x);
     return 0;
+    
+    int day;
+    printf("Day: ");
+    scanf("%i", &day );
+
 }
