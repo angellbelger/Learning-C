@@ -12,4 +12,5 @@ int main()
     printf("Year: ");
     scanf("%i", &year);
     printf("Your birth date is: %i/%i/%i", day, month, year);
+    return 0;
 }
