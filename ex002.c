@@ -3,11 +3,13 @@
 
 int main()
 {
-    int num1, num2;
-    printf("Digite um numero: \n");
-    scanf("%i", &num1);
-
-    printf("%i", num1);
-    return 0;
-
+    int day, month, year;
+    printf("Hello, world.");
+    printf("Day: \n");
+    scanf("%i", &day);
+    printf("Month: \n");
+    scanf("i", &month);
+    printf("Year: \n");
+    scanf("%i", &year);
+    printf("Your birth date is: %i/%i/%i", day, month, year);
 }
