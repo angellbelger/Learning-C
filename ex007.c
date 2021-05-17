@@ -15,5 +15,6 @@ int main()
     average = (grade1 + grade2) / 2;
     
     printf("Average: %f", average);
+    return 0;
 
 }
