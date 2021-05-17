@@ -12,4 +12,5 @@ int main()
     y = x * 100;
 
     printf("%fm = %fcm", x, y);
+    return 0;
 }
