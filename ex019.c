@@ -4,15 +4,23 @@ int main()
 {
     printf("\nHello, world.\n");
 
-    int x;
+    float velocity, value;
 
-    printf("\nType a number between 0 and 9999: ");
-    scanf("%i", &x);
+    printf("Velocity in Km/h: ");
+    scanf("%f", &velocity);
 
-    printf("Unidade: %i\n", x % 10);
-    printf("Dezena: %i\n", x % 100);
-    printf("Centena: %i\n", x % 1000);
-    printf("Milhar: %i\n", x % 10000);
+    if (velocity <= 80)
+    {
+        printf("\nHave a good day.\n");
+    }else{
+        printf("\nAttention! You were mutated");
+
+        value = (velocity - 80) * 7;
+
+        printf("\nValue: R$%.2f\n", value);
+
+    }
 
     return 0;
+
 }
