@@ -4,6 +4,7 @@ int main()
 {
     int option, vote;
     float vote_lula, vote_bolso, vote_amoedo;
+    vote_amoedo = vote_bolso = vote_lula = 0;
     
     printf("\nHello, world.\n");
 
@@ -43,14 +44,11 @@ int main()
             }
         
         case 2:
-            /*printf("\n---------- Polling ----------\n");
+            printf("\n---------- Polling ----------\n");
             printf("\nResult:\n");
             printf("\nLula: %.2f%%", ( (vote_lula / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));
             printf("\nBolsonaro: %.2f%%", ( (vote_bolso / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));
-            printf("\nAmoedo: %.2f%%", ( (vote_amoedo / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));*/
-            printf("%f", vote_lula);
-            printf("%f", vote_bolso);
-            printf("%f", vote_amoedo);
+            printf("\nAmoedo: %.2f%%", ( (vote_amoedo / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));
 
             break;
         
