@@ -48,14 +48,13 @@ int main()
             printf("\nLula: %.2f%%", ( (vote_lula / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));
             printf("\nBolsonaro: %.2f%%", ( (vote_bolso / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));
             printf("\nAmoedo: %.2f%%", ( (vote_amoedo / (vote_amoedo + vote_bolso + vote_lula)) * 100 ));*/
-            printf("%d", &vote_lula);
-            printf("%d", &vote_bolso);
-            printf("%d", &vote_amoedo);
+            printf("%f", vote_lula);
+            printf("%f", vote_bolso);
+            printf("%f", vote_amoedo);
 
             break;
         
         case 3:
-            printf("\nok 3");
             break;
 
         default:
