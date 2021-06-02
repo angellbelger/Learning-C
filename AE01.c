@@ -2,98 +2,87 @@
 
 int main()
 {
-    int option, vote, vote2;
-    option = 0;
-    float vote_joao, vote_maria, vote_ze, vote_zureta, vote_gomes;
-    vote_joao = vote_maria = vote_ze = vote_zureta = vote_gomes = 0;
-    
     printf("\nHello, world.\n");
+
+    int option, vote, vote_two;
+    int vote_joao, vote_maria, vote_ze, vote_gomes, vote_zureta;
+    vote_joao = vote_maria = vote_ze = vote_gomes = vote_zureta = 0;
 
     do
     {
-
         printf("\n\n---------- Voting ----------\n\n");
-        printf("\n1 - Vote\n2 - Polling\n3 - Exit");
+        printf("\n1 - To vote\n2 - Counting of votes\n3 - Exit\n");
         printf("\nOption: ");
         scanf("%i", &option);
+        printf("\n\n----------------------------\n\n");
 
         switch (option)
         {
             case 1:
                 printf("\nTo city councilor.\n");
-                printf("\n111 - Joao do Frete\n222 - Maria da Pamonha\n333 - Ze da Farmacia\n444 - Voto nulo");
+                printf("\n111 - Joao do Frete\n222 - Maria da Pamonha\n333 - Ze da Farmacia\n444 - Para anular\n");
                 printf("\nVote: ");
                 scanf("%i", &vote);
-                
                 switch (vote)
                 {
                     case 111:
-                        printf("\ncomputed vote.");
                         vote_joao++;
                         break;
-                    
                     case 222:
-                        printf("\ncomputed vote.");
                         vote_maria++;
                         break;
-                    
                     case 333:
-                    printf("\ncomputed vote.");
                         vote_ze++;
                         break;
-
                     case 444:
-                        printf("\nVote void.");
-
+                        printf("\nVote void.\n");
+                        break;
                     default:
-                        printf("\nInvalid Vote.\n");
-                        printf("\nVote void.");
+                        printf("\nInvalid vote.\n");
                         break;
                 }
-
                 printf("\nTo Mayor.\n");
-                printf("\n11 - Dr. Zureta\n22 - Sr. Gomes\n44 - Voto nulo");
+                printf("\n11 - Dr. Zureta\n22 - Mr. Gomes\n44 - Para anular\n");
                 printf("\nVote: ");
-                scanf("%i", &vote2);
-
-                switch (vote2)
+                scanf("%i", &vote_two);
+                if ( vote_two == 11 )
                 {
-                    case 11:
-                        vote_zureta++;
-                        break;
-                    case 22:
-                        vote_gomes++;
-                        break;
-                    case 44:
-                        printf("\nInvalid Vote.\n");
-                        printf("\nVote void.");
-                        break;
-                    default:
-                        printf("\nInvalid Vote.\n");
-                        printf("\nVote void.");
-                        break;
-            }
-            
+                    vote_zureta++;
+                    break;
+                }
+                if ( vote_two == 22 )
+                {
+                    vote_gomes++;
+                    break;
+                }
+                if ( vote_two == 44 )
+                {
+                    printf("\nVote void.\n");
+                    break;
+                }
+                else
+                {
+                    printf("\nInvalid vote.\n");
+                    break;
+                }
             case 2:
-                printf("\n---------- Polling ----------\n");
-                printf("\nResult:\n");
-                printf("\nJoao do Frete: %.2f%%", ( ( vote_joao / ( vote_joao + vote_maria + vote_ze )) * 100 ));
-                printf("\nMaria da Pamonha: %.2f%%", ( ( vote_maria / ( vote_joao + vote_maria + vote_ze )) * 100 ));
-                printf("\nZe da Farmacia: %.2f%%", ( ( vote_ze / ( vote_joao + vote_maria + vote_ze )) * 100 ));
-                printf("\n\n-----------------------------\n\n");
-                printf("\nDr. Zureta: %.2f%%", ( ( vote_zureta / ( vote_zureta + vote_gomes )) * 100 ));
-                printf("\nSr. Gomes: %.2f%%", ( (vote_gomes / ( vote_zureta + vote_gomes )) * 100 ));
+                printf("\n\n---------- Resulte ----------\n\n");
+                printf("To city councilor.\n");
+                printf("\nJoao do Frete: %i\nMaria da Pamonha: %i\nZe da Farmacia: %i\n", vote_joao, vote_maria, vote_ze);
+                printf("\n-----------------------------\n");
+                printf("\nTo Mayor.\n");
+                printf("\nDr. Zureta: %i\nMr. Gomes: %i\n", vote_zureta, vote_gomes);
+                break;
+            case 3:
+                printf("\nExiting...\n");
                 break;
             
-            case 3:
-                break;
-
             default:
-                printf("\nInvalid Command/");
+                printf("\nInvalid Option");
                 break;
         }
-
-    } while ( option != 3 );
+    }
+    while ( option != 3 );
 
     return 0;
 }
