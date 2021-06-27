@@ -4,6 +4,7 @@
 
 int main()
 {
+    int cartelas;
     int i = 0;
     int j = 0;
     int equal = 0;
@@ -15,7 +16,7 @@ int main()
 
     do
     {
-        vectorA[i] = rand() % 10 + 1;
+        vectorA[i] = rand() % 100;
         equal = 0;
         for ( j=0; j<i; j++)
         {
