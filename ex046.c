@@ -5,7 +5,8 @@
 int main()
 {
     int i = 0;
-    int count = 0;
+    int j = 0;
+    int equal = 0;
     int vectorA[10];
 
     srand(time(NULL));
@@ -14,14 +15,16 @@ int main()
 
     do
     {
-        for( i=0; i<10; i++)
+        vectorA[i] = rand() % 10 + 1;
+        equal = 0;
+        for ( j=0; j<i; j++)
         {
-            vectorA[i] = rand() % 10 + 1;
-            
-            count++;
+            if ( vectorA[j] == vectorA[i])
+                equal = 1;
         }
-
-    }while( count < 10);
+        if ( equal == 0)
+            i++;
+    }while( i < 10);
 
     printf("Your vector: ");
     for (i=0; i<10; i++)
