@@ -2,7 +2,6 @@
 #include <time.h>
 #include <stdlib.h>
 
-
 int tab()
 {
     int cartelas;
@@ -15,7 +14,7 @@ int tab()
             do
             {
                 srand(time(NULL));
-                
+
                 vectorA[i] = rand() % 99 + 1;
                 equal = 0;
                 for ( j=0; j<i; j++)
