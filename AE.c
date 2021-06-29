@@ -15,7 +15,7 @@ int tab()
             {
                 srand(time(NULL));
 
-                vectorA[i] = rand() % 99 + 1;
+                vectorA[i] = rand() % 100;
                 equal = 0;
                 for ( j=0; j<i; j++)
                 {
