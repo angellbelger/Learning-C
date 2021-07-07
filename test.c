@@ -1,13 +1,13 @@
-#include <stdio.h>
-
-main()
-{int g=0,i=0,l=0,k=0;
-int m,n,o;
-
-while (i<=10)
-{ m=g++;
-n=+l;
-o=++k;
-i++;
+#include<stdio.h>
+int main(void){
+ int a = 10;
+ 
+ if (a = 11) {
+   printf("1");
+ }
+ 
+ if (a == 10) {
+   printf("%d", a);
+ }
+ printf("%d", a);
 }
-printf (" m=%d n=%d o=%d ", m,n,o);}
