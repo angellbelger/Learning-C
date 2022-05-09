@@ -12,5 +12,5 @@ int main(){
     scanf("%i", &age);
     printf("\nHow much do you weight? ");
     scanf("%f", &weight);
-    printf("\nYour name is %s, you are %i years old, and you weight %fkg\n", name, age, weight);
+    printf("\nYour name is %s, you are %i years old, and you weight %.2fkg\n", name, age, weight);
 }
