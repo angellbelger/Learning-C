@@ -7,7 +7,7 @@ int main(){
 
     printf(">>>>>>>>>>>> Average <<<<<<<<<<<<\n");
     printf("\nLearner: ");
-    scanf("%s", &learner);
+    gets(learner);
     printf("\nNote 1: ");
     scanf("%f", &n1);
     printf("\nNote 2: ");
