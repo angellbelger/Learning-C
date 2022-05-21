@@ -15,4 +15,6 @@ int main(){
         vector[i] = pow(2, i);
         printf("%i\n", vector[i]);
     }
+    free(vector);
+    return 0;
 }
