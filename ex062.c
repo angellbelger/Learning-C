@@ -23,7 +23,7 @@ void insertLeft(No *no, int value){
         if (value < no->left->conteudo){
             insertLeft(no->left, value);
         }
-        else
+        else 
             insertRight(no->left, value);
     }
 
@@ -41,6 +41,7 @@ void insertRight(No *no, int value){
         if (value > no->right->conteudo)
             insertRight(no->right, value);
         else
+            insertLeft(no->right, value);
     }
 
 }
