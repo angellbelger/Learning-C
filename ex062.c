@@ -48,7 +48,7 @@ void insertRight(No *no, int value){
 
 void insert(treeBinary *arv, int value){
     if (arv->raiz == NULL){
-        No *novo = (No*) malloc(sizeof(No));
+        No *novo = (No*) malloc(size of(No));
         novo->conteudo = value;
         novo->left = NULL;
         novo->right = NULL;
@@ -62,6 +62,8 @@ void insert(treeBinary *arv, int value){
             insertRight(arv->raiz, value);
     }
 }
+
+void imprimir(treeBinary *)
 
 int main(){
 
