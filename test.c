@@ -2,8 +2,22 @@
 #include <stdlib.h>
 #include <math.h>
 
-char nomeAluno[] = "jubileu";
+int *p;
+int x;
 
-struct matricula{
-      char *nome = "jaja";
-};
+int main(void){
+   printf("\nhello, world.\n");
+
+   int *p;
+
+   p = (int *) malloc(4);
+
+   if (p == NULL){
+      printf("Erro\n");
+   }else {
+      *p = 10;
+      printf("The value of x = %i\n", *p);
+
+      free(p);
+   }
+}
