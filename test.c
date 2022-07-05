@@ -1,17 +1,16 @@
-int menor, maior, meio;
-    menor = 0;
-    maior = tam-1;
-    while (menor <= maior){
-       meio = (menor + maior)/2;
-       if (arg == vec[meio]){
-            return(meio);
+#include <stdio.h>
+#include <stdlib.h>
+
+//Aplica o método do Bubblesort
+int Bubblesort (int vec[]){
+   int i, j, tmp, tamanho;
+   
+   for (i = 0; i < tamanho -1; i++){
+      for (j = i+1; j < tamanho; j++){
+         if (vec[i] < vec[j]){
+            troca(&vec[i], &vec[j]);
         }
-        if(arg < vec[meio]){
-            maior = meio - 1;
-        }
-       else {
-          menor = meio + 1;
-       }
-    }
-    return(-1);
+     }
+   }
 }
+//Considere que a função troca() inverte as posições dos parâmetros vec[i] e vec[j] dentro do vetor
