@@ -78,8 +78,62 @@ void grafo_criar(void) {
         scanf("%d", &destino);
       } while (destino < 1 || destino > vertices || destino == origem);
       do {
-        
-      }
+        printf("Custo (positivo) do vertice %i para o vertice %i: ", origem, destino);
+        scanf("%f", &custo);
+      } while (custo < 0);
+      custos[(origem-1) * vertices + destino - 1] = custo;
+    }
+  } while (origem);
+}
+
+void procurar_grafo(void) {
+  int i, j;
+  system("clear");
+  printf("Lista de menores rotas no grafo: \n");
+  for (i = 1; i <= vertices; i++) {
+    for (j = 1; j <= vertices; j++) {
+      dijkstra(vertices, i, j, custos);
     }
   }
+}
+
+void dikjstra(int vertices, int origem, int destino, float *custos) {
+  int i, v, cont = 0;
+  int *ant, *tmp;
+  int z; // vertices para caminhos minimos
+  double min;
+  double dist[verticed]; //vetor com os custos dos caminhos
+
+  //aloca as linhas da matriz
+  ant = (int *) calloc(vertices, sizeof(int *));
+  if (ant == NULL) {
+    printf("Memoria insuficiente.");
+    exit(-1);
+  }
+  tmp = (int *) calloc(vertices, sizeof(int *));
+  if (tmp == NULL) {
+    printf("Memoria insuficiente.");
+    exit(-1);
+  }
+  z = (int *) calloc(vertices, sizeof(int *));
+  if (z == NULL) {
+    printf("Memoria insuficiente.");
+    exit(-1);
+  }
+
+  for (i = 0; i < vertices; i++) {
+    if (custos[(origem - 1) * vertices + i] != -1) {
+      ant[i] = origem - 1;
+      dist[i] = custos[(origem - 1) * vertices + i];
+    }else {
+      ant[i] = -1;
+      dist[i] = HUGE_VAL;
+    }
+    z[i] = 0;
+  }
+
+  z[origem-1] = 1;
+  dist[origem-1] = 0;
+
+  //laco principal
 }
