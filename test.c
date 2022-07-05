@@ -1,23 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
-int *p;
-int x;
-
-int main(void){
-   printf("\nhello, world.\n");
-
-   int *p;
-
-   p = (int *) malloc(4);
-
-   if (p == NULL){
-      printf("Erro\n");
-   }else {
-      *p = 10;
-      printf("The value of x = %i\n", *p);
-
-      free(p);
-   }
-}
+#include <stdio.h>  
+int main(int argc, char **argv) {  
+    int vetor[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};  
+    int i = 0, temp;  
+    while (i < 10){  
+        temp = vetor[i];  
+        vetor[i] = vetor[9-i];  
+        vetor[9-i] = temp;  
+        printf("%d ",vetor[i]);  
+        i++;              
+    }  
+} 
