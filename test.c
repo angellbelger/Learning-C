@@ -13,7 +13,7 @@ void menu_mostrar(void);
 void grafo_procurar(void);
 void grafo_criar(void);
 
-// funcao principal
+// main function
 int main(int argc, char**argv) {
   int opt = -1;
   do {
@@ -34,7 +34,7 @@ int main(int argc, char**argv) {
 }
 
 
-//desenhar na tela o menu
+//show menu
 void menu_mostrar(void) {
   
   printf("Implementacao do algoritmo de Dijasktra\n");
@@ -46,7 +46,7 @@ void menu_mostrar(void) {
 
 void grafo_criar(void) {
   do {
-    printf("\nInforme o numero de vertices: ");
+    printf("\nNumero de vertices: ");
     scanf("%d", &vertices);
   } while (vertices < 3);
 
@@ -55,12 +55,12 @@ void grafo_criar(void) {
   }
   custos = (float *) malloc(sizeof(float)*vertices*vertices);
   if (custos == NULL) {
-    printf("Erro, memoria insuficiente.");
+    printf("Memoria insuficiente.");
     exit(-1);
   }
 
   //preenchendo matriz com -1
-  for (int i = 0; i <= vertices; i++){
+  for (int i = 0; i <= vertices * vertices; i++){
     custos[i] = -1;
     // a funcao printf criou um array com 26 posicoes para 5 vertices, caso chamado de iteracao.
   }
@@ -69,12 +69,12 @@ void grafo_criar(void) {
     system("clear");
     printf("Entre com as arestas:\n");
     do {
-      printf("Origem (entre 1 e %d ou '0' para sair)", vertices);
+      printf("Origem (entre 1 e %d ou '0' para sair): ", vertices);
       scanf("%i", &origem);
     } while (origem < 0 || origem > vertices);
     if (origem){
       do {
-        printf("Destino (entre 1 e %i, menos %i)", vertices, origem);
+        printf("Destino (entre 1 e %i, menos %i): ", vertices, origem);
         scanf("%d", &destino);
       } while (destino < 1 || destino > vertices || destino == origem);
       do {
@@ -135,7 +135,7 @@ void dijkstra(int vertices, int origem, int destino, float *custos) {
   z[origem-1] = 1;
   dist[origem-1] = 0;
 
-  //laco principal
+  //main loop
   do {
     min = HUGE_VAL;
     for (i = 0;i < vertices;i++){
@@ -159,10 +159,10 @@ void dijkstra(int vertices, int origem, int destino, float *custos) {
     }
   } while (v != destino -1 && min != HUGE_VAL);
 
-  //mostrando o resultado
+  //show result
   printf("\tDe %d para %d: \t", origem, destino);
   if (min == HUGE_VAL){
-    printf("Nao existe.\n");
+    printf("Inexistente.\n");
     printf("\tCusto \t- \n");
   }else {
     i = destino;
