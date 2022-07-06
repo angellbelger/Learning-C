@@ -24,7 +24,7 @@ int main(int argc, char**argv) {
         grafo_criar();
         break;
       case 2:
-        if(vertices < 0){
+        if(vertices > 0){
           grafo_procurar();
         }
       break;
@@ -86,7 +86,7 @@ void grafo_criar(void) {
   } while (origem);
 }
 
-void procurar_grafo(void) {
+void grafo_procurar(void) {
   int i, j;
   system("clear");
   printf("Lista de menores rotas no grafo: \n");
@@ -97,12 +97,12 @@ void procurar_grafo(void) {
   }
 }
 
-void dikjstra(int vertices, int origem, int destino, float *custos) {
+void dijkstra(int vertices, int origem, int destino, float *custos) {
   int i, v, cont = 0;
   int *ant, *tmp;
-  int z; // vertices para caminhos minimos
+  int *z; // vertices para caminhos minimos
   double min;
-  double dist[verticed]; //vetor com os custos dos caminhos
+  double dist[vertices]; //vetor com os custos dos caminhos
 
   //aloca as linhas da matriz
   ant = (int *) calloc(vertices, sizeof(int *));
@@ -136,4 +136,46 @@ void dikjstra(int vertices, int origem, int destino, float *custos) {
   dist[origem-1] = 0;
 
   //laco principal
+  do {
+    min = HUGE_VAL;
+    for (i = 0;i < vertices;i++){
+      if (!z[i]){
+        if (dist[i] >= 0 && dist[i] < min){
+          min = dist[i]; v = i;
+        }
+      }
+    }
+    //calculando a distancia dos novos vizinhos
+    if (min != HUGE_VAL && v != destino - 1){
+      z[v] = 1;
+      for (i = 0;i < vertices;i++){
+        if (!z[i]){
+          if (custos[v*vertices+i] != -1 && dist[v] + custos[v*vertices+i] < dist[i]){
+            dist[i] = dist[v] + custos[v*vertices+i];
+            ant[i] = v;
+          }
+        }
+      }
+    }
+  } while (v != destino -1 && min != HUGE_VAL);
+
+  //mostrando o resultado
+  printf("\tDe %d para %d: \t", origem, destino);
+  if (min == HUGE_VAL){
+    printf("Nao existe.\n");
+    printf("\tCusto \t- \n");
+  }else {
+    i = destino;
+    i = ant[i-1];
+    while (i != -1){
+      tmp[cont] = i + 1;
+      cont++;
+      i = ant[i];
+    }
+    for (i = cont; i > 0;i--){
+      printf("%d -> ", tmp[i - 1]);
+    }
+    printf("%d", destino);
+    printf("\n\tCusto: %.3lf\n", dist[destino-1]);
+  }
 }
